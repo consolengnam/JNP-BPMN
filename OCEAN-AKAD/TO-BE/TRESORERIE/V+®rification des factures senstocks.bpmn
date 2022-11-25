@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" xmlns:color="http://www.omg.org/spec/BPMN/non-normative/color/1.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1dq48x6" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.0.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.17.0">
+  <bpmn:collaboration id="Collaboration_1xp838i">
+    <bpmn:participant id="Participant_0zk8h26" name="Sous processus de Vérification des factures senstocks" processRef="Process_0903ug5" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_0903ug5" isExecutable="true">
+    <bpmn:laneSet id="LaneSet_0s7s4t8">
+      <bpmn:lane id="Lane_0bvyb78" name="Responsable Trésorerie">
+        <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1maiwbe</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_02amwdf</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_14g2gp4" name="SENSTOCK">
+        <bpmn:flowNodeRef>Activity_16z9pbv</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_0vtjitz" name="FA">
+        <bpmn:flowNodeRef>Activity_0iq0sek</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_097c7y6</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:sequenceFlow id="Flow_0t9gtfa" sourceRef="StartEvent_1" targetRef="Activity_1maiwbe" />
+    <bpmn:sequenceFlow id="Flow_0fj5r2u" sourceRef="Activity_1maiwbe" targetRef="Activity_02amwdf" />
+    <bpmn:sequenceFlow id="Flow_0q3lh81" sourceRef="Activity_02amwdf" targetRef="Activity_16z9pbv" />
+    <bpmn:dataObjectReference id="DataObjectReference_1hl0bz8" name="- Fichier caution senstock&#10;- Dossier de décaissement&#10;(Décaissement ; ordre de chargement ; courrier nomination OCEAN AKAD ; courrier relâche SENSTOCK)" dataObjectRef="DataObject_0a4k15e" />
+    <bpmn:dataObject id="DataObject_0a4k15e" />
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_0t9gtfa</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Activity_1maiwbe" name="Recevoir un mail de notification de mis à jour du solde de la caution">
+      <bpmn:incoming>Flow_0t9gtfa</bpmn:incoming>
+      <bpmn:outgoing>Flow_0fj5r2u</bpmn:outgoing>
+      <bpmn:property id="Property_11mav8b" name="__targetRef_placeholder" />
+      <bpmn:dataInputAssociation id="DataInputAssociation_1bwj5d2">
+        <bpmn:sourceRef>DataObjectReference_1hl0bz8</bpmn:sourceRef>
+        <bpmn:targetRef>Property_11mav8b</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+    </bpmn:task>
+    <bpmn:dataObjectReference id="DataObjectReference_0zwgxtg" name="- Fichier caution senstock&#10;- Dossier décaissement (Reference cession Ocean&#10;NOM DU CLIENT&#10;Ordre de chargement)" dataObjectRef="DataObject_0kh7w39" />
+    <bpmn:dataObject id="DataObject_0kh7w39" />
+    <bpmn:task id="Activity_02amwdf" name="Procéder à la vérification de volume&#10;Volume &#60;= volume de la cession a +/- 10% P">
+      <bpmn:incoming>Flow_0fj5r2u</bpmn:incoming>
+      <bpmn:outgoing>Flow_0q3lh81</bpmn:outgoing>
+      <bpmn:property id="Property_1tt0cpp" name="__targetRef_placeholder" />
+      <bpmn:dataInputAssociation id="DataInputAssociation_18j0ag3">
+        <bpmn:sourceRef>DataObjectReference_0zwgxtg</bpmn:sourceRef>
+        <bpmn:targetRef>Property_1tt0cpp</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+    </bpmn:task>
+    <bpmn:task id="Activity_16z9pbv" name="Recevoir notification de mis à jour du solde de la caution">
+      <bpmn:incoming>Flow_0q3lh81</bpmn:incoming>
+      <bpmn:outgoing>Flow_1o8v964</bpmn:outgoing>
+      <bpmn:property id="Property_1fo1wkg" name="__targetRef_placeholder" />
+      <bpmn:dataInputAssociation id="DataInputAssociation_0t9fo80">
+        <bpmn:sourceRef>DataObjectReference_1hl0bz8</bpmn:sourceRef>
+        <bpmn:targetRef>Property_1fo1wkg</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+    </bpmn:task>
+    <bpmn:task id="Activity_0iq0sek" name="VERIFICATION&#10;DU TOTAL PAR CESSION  &#10;(Vérifier P &#38; R sur le total de la cession)">
+      <bpmn:incoming>Flow_1o8v964</bpmn:incoming>
+      <bpmn:outgoing>Flow_1uwx4e2</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_1o8v964" sourceRef="Activity_16z9pbv" targetRef="Activity_0iq0sek" />
+    <bpmn:endEvent id="Event_097c7y6">
+      <bpmn:incoming>Flow_1uwx4e2</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1uwx4e2" sourceRef="Activity_0iq0sek" targetRef="Event_097c7y6" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1xp838i">
+      <bpmndi:BPMNShape id="Participant_0zk8h26_di" bpmnElement="Participant_0zk8h26" isHorizontal="true">
+        <dc:Bounds x="129" y="90" width="631" height="490" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0bvyb78_di" bpmnElement="Lane_0bvyb78" isHorizontal="true">
+        <dc:Bounds x="159" y="90" width="601" height="250" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_14g2gp4_di" bpmnElement="Lane_14g2gp4" isHorizontal="true">
+        <dc:Bounds x="159" y="340" width="601" height="120" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0vtjitz_di" bpmnElement="Lane_0vtjitz" isHorizontal="true">
+        <dc:Bounds x="159" y="460" width="601" height="120" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0t9gtfa_di" bpmnElement="Flow_0t9gtfa">
+        <di:waypoint x="228" y="260" />
+        <di:waypoint x="340" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0fj5r2u_di" bpmnElement="Flow_0fj5r2u">
+        <di:waypoint x="440" y="260" />
+        <di:waypoint x="550" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0q3lh81_di" bpmnElement="Flow_0q3lh81">
+        <di:waypoint x="600" y="300" />
+        <di:waypoint x="600" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1o8v964_di" bpmnElement="Flow_1o8v964">
+        <di:waypoint x="600" y="440" />
+        <di:waypoint x="600" y="480" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1uwx4e2_di" bpmnElement="Flow_1uwx4e2">
+        <di:waypoint x="650" y="520" />
+        <di:waypoint x="702" y="520" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="DataObjectReference_1hl0bz8_di" bpmnElement="DataObjectReference_1hl0bz8" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
+        <dc:Bounds x="342" y="95" width="36" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="259" y="90" width="81" height="159" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1" bioc:stroke="#43a047" bioc:fill="#c8e6c9" color:background-color="#c8e6c9" color:border-color="#43a047">
+        <dc:Bounds x="192" y="242" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1maiwbe_di" bpmnElement="Activity_1maiwbe">
+        <dc:Bounds x="340" y="220" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_06kmc2z" bpmnElement="DataObjectReference_0zwgxtg" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
+        <dc:Bounds x="542" y="95" width="36" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="456" y="100" width="88" height="119" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_02amwdf_di" bpmnElement="Activity_02amwdf">
+        <dc:Bounds x="550" y="220" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_16z9pbv_di" bpmnElement="Activity_16z9pbv">
+        <dc:Bounds x="550" y="360" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0iq0sek_di" bpmnElement="Activity_0iq0sek">
+        <dc:Bounds x="550" y="480" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_097c7y6_di" bpmnElement="Event_097c7y6" bioc:stroke="#e53935" bioc:fill="#ffcdd2" color:background-color="#ffcdd2" color:border-color="#e53935">
+        <dc:Bounds x="702" y="502" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="DataInputAssociation_1bwj5d2_di" bpmnElement="DataInputAssociation_1bwj5d2">
+        <di:waypoint x="373" y="145" />
+        <di:waypoint x="410" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataInputAssociation_18j0ag3_di" bpmnElement="DataInputAssociation_18j0ag3">
+        <di:waypoint x="578" y="145" />
+        <di:waypoint x="633" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataInputAssociation_0t9fo80_di" bpmnElement="DataInputAssociation_0t9fo80">
+        <di:waypoint x="378" y="141" />
+        <di:waypoint x="480" y="260" />
+        <di:waypoint x="550" y="383" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
