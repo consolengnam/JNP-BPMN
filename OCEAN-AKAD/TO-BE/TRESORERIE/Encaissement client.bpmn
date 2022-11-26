@@ -26,6 +26,7 @@
         <bpmn:flowNodeRef>Activity_0h47qdl</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_1akrvfs</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1kglz72</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_1hf5mx9</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
     <bpmn:startEvent id="StartEvent_1">
@@ -33,7 +34,9 @@
     </bpmn:startEvent>
     <bpmn:serviceTask id="Activity_1oktdti" name="Identifier les factures clients arrivées à échéance ou à arriver à échéance dans 07 jours">
       <bpmn:incoming>Flow_1pzy1jx</bpmn:incoming>
+      <bpmn:incoming>Flow_1yf54z7</bpmn:incoming>
       <bpmn:outgoing>Flow_13ceykv</bpmn:outgoing>
+      <bpmn:outgoing>Flow_04w0ly9</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:intermediateThrowEvent id="Event_0p4c4yp" name="Listing des factures ventillé par client">
       <bpmn:incoming>Flow_13ceykv</bpmn:incoming>
@@ -86,7 +89,7 @@
       <bpmn:messageEventDefinition id="MessageEventDefinition_1rd06jm" />
     </bpmn:intermediateThrowEvent>
     <bpmn:sequenceFlow id="Flow_04x9yei" name="CAS ESPECE" sourceRef="Gateway_1b1n3nw" targetRef="Activity_1kglz72" />
-    <bpmn:userTask id="Activity_0t70cva" name="Enregistrer le SWIFT dans le tableau de suivi des SWIFT et le rattacher à la facture client">
+    <bpmn:userTask id="Activity_0t70cva" name="Enregistrer le SWIFT et le rattacher à la facture">
       <bpmn:incoming>Flow_1nxyvsb</bpmn:incoming>
       <bpmn:outgoing>Flow_1fk2vfy</bpmn:outgoing>
     </bpmn:userTask>
@@ -111,6 +114,13 @@
       <bpmn:incoming>Flow_04x9yei</bpmn:incoming>
       <bpmn:outgoing>Flow_076lge4</bpmn:outgoing>
     </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_04w0ly9" sourceRef="Activity_1oktdti" targetRef="Event_1hf5mx9" />
+    <bpmn:sequenceFlow id="Flow_1yf54z7" sourceRef="Event_1hf5mx9" targetRef="Activity_1oktdti" />
+    <bpmn:intermediateCatchEvent id="Event_1hf5mx9">
+      <bpmn:incoming>Flow_04w0ly9</bpmn:incoming>
+      <bpmn:outgoing>Flow_1yf54z7</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerEventDefinition_0ka44m8" />
+    </bpmn:intermediateCatchEvent>
     <bpmn:textAnnotation id="TextAnnotation_0rd9kz3">
       <bpmn:text>Recevoir les preuves de paiements du client ou du service de tésorerie de JNP BENIN SWIFT, Fiche de dépôt d'espèces etc..</bpmn:text>
     </bpmn:textAnnotation>
@@ -123,7 +133,7 @@
     <bpmn:association id="Association_0acrnye" sourceRef="Activity_0nsktib" targetRef="TextAnnotation_0agcjhh" />
     <bpmn:association id="Association_1dkwtxf" sourceRef="Activity_08hg9wc" targetRef="TextAnnotation_0rd9kz3" />
     <bpmn:textAnnotation id="TextAnnotation_1qqyfc0">
-      <bpmn:text>L'enregistrement du paiement doit apurer la facture et générer les écritures en comptabilité et cas de SWIFT  mettre à jour le tableau des SWIFT</bpmn:text>
+      <bpmn:text>L'enregistrement du paiement doit apurer la facture et générer les écritures en comptabilité</bpmn:text>
     </bpmn:textAnnotation>
     <bpmn:association id="Association_0brohvc" sourceRef="Activity_1kglz72" targetRef="TextAnnotation_1qqyfc0" />
   </bpmn:process>
@@ -150,7 +160,7 @@
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="TextAnnotation_1qqyfc0_di" bpmnElement="TextAnnotation_1qqyfc0" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
-        <dc:Bounds x="1440" y="680" width="120" height="142" />
+        <dc:Bounds x="1440" y="680" width="120" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_0ovxaom_di" bpmnElement="Flow_0ovxaom">
@@ -247,6 +257,16 @@
           <dc:Bounds x="985" y="762" width="71" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_04w0ly9_di" bpmnElement="Flow_04w0ly9">
+        <di:waypoint x="390" y="547" />
+        <di:waypoint x="390" y="590" />
+        <di:waypoint x="368" y="590" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1yf54z7_di" bpmnElement="Flow_1yf54z7">
+        <di:waypoint x="332" y="590" />
+        <di:waypoint x="310" y="590" />
+        <di:waypoint x="310" y="547" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1" bioc:stroke="#43a047" bioc:fill="#c8e6c9" color:background-color="#c8e6c9" color:border-color="#43a047">
         <dc:Bounds x="192" y="489" width="36" height="36" />
       </bpmndi:BPMNShape>
@@ -284,6 +304,7 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1evvdz3_di" bpmnElement="Activity_0t70cva">
         <dc:Bounds x="760" y="550" width="100" height="80" />
+        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_14cqfky_di" bpmnElement="Gateway_14cqfky" isMarkerVisible="true">
         <dc:Bounds x="905" y="565" width="50" height="50" />
@@ -297,6 +318,9 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0lmx5sj_di" bpmnElement="Activity_1kglz72">
         <dc:Bounds x="1340" y="570" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1uef3cy_di" bpmnElement="Event_1hf5mx9">
+        <dc:Bounds x="332" y="572" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Association_0acrnye_di" bpmnElement="Association_0acrnye">
         <di:waypoint x="1130" y="410" />
