@@ -11,29 +11,30 @@
   <bpmn:process id="Process_1895j2j" isExecutable="true">
     <bpmn:laneSet id="LaneSet_10sa1w2">
       <bpmn:lane id="Lane_0fkubxz" name="COMPTABLE">
-        <bpmn:flowNodeRef>Event_0fo8qgw</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_0e3pd2r</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_0vsa124</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_0bi4u4k</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_09bacf2</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_0bi4u4k</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_0vsa124</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0e3pd2r</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_0fo8qgw</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_1kedt8y" name="DG">
-        <bpmn:flowNodeRef>Activity_0yznxhv</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Gateway_1thmz4n</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1nd3v0o</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_0gv05tb</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0yznxhv</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1ij8q6q</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1lkij8k</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_1thmz4n</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0xa8l4k</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_0gv05tb</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_0ngtq4y" name="FA">
-        <bpmn:flowNodeRef>Activity_1kp7sxi</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Gateway_0u8ah7d</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_0dmb7gr</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_1d1rgvs</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_15cq09g</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_06tqpbp</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_162bhgx</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_12hr688</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_162bhgx</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_06tqpbp</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_15cq09g</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1d1rgvs</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0dmb7gr</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_0u8ah7d</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1kp7sxi</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_173p7gb</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1mcsg7n</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_0mk60pj</bpmn:flowNodeRef>
@@ -42,28 +43,23 @@
         <bpmn:flowNodeRef>Activity_0om7ccr</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_1nkbmox</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1lpl0h7</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_12ocp9j</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_0s9mjff</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_1mqoa98</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_15bko96</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
     <bpmn:sequenceFlow id="Flow_03ydar4" name="CAS TRANSFERT TELEGRAPHIQU E" sourceRef="Gateway_0u8ah7d" targetRef="Activity_0mk60pj" />
     <bpmn:sequenceFlow id="Flow_1ibtevr" sourceRef="Activity_162bhgx" targetRef="Event_12hr688" />
-    <bpmn:sequenceFlow id="Flow_0uhe7ke" sourceRef="Event_12ocp9j" targetRef="Activity_162bhgx" />
     <bpmn:sequenceFlow id="Flow_1r6v7h2" sourceRef="Activity_06tqpbp" targetRef="Activity_162bhgx" />
     <bpmn:sequenceFlow id="Flow_00rv33h" sourceRef="Activity_15cq09g" targetRef="Activity_06tqpbp" />
     <bpmn:sequenceFlow id="Flow_0rts4y5" sourceRef="Activity_1d1rgvs" targetRef="Activity_15cq09g" />
     <bpmn:sequenceFlow id="Flow_0hzp8oz" sourceRef="Activity_0dmb7gr" targetRef="Activity_1d1rgvs" />
     <bpmn:sequenceFlow id="Flow_088hr53" sourceRef="Activity_1lpl0h7" targetRef="Event_15bko96" />
-    <bpmn:sequenceFlow id="Flow_0oumjl2" sourceRef="Event_1mqoa98" targetRef="Activity_1lpl0h7" />
     <bpmn:sequenceFlow id="Flow_0dl7y83" sourceRef="Activity_1mcsg7n" targetRef="Activity_1lpl0h7" />
     <bpmn:sequenceFlow id="Flow_0pa59qt" sourceRef="Activity_173p7gb" targetRef="Activity_1mcsg7n" />
     <bpmn:sequenceFlow id="Flow_1xvi1j4" sourceRef="Activity_1kp7sxi" targetRef="Activity_173p7gb" />
     <bpmn:sequenceFlow id="Flow_0pv1bt3" name="CAS CHEQUE" sourceRef="Gateway_0u8ah7d" targetRef="Activity_0dmb7gr" />
     <bpmn:sequenceFlow id="Flow_1a8pk36" name="CAS VIREMENT" sourceRef="Gateway_0u8ah7d" targetRef="Activity_1kp7sxi" />
     <bpmn:sequenceFlow id="Flow_126185o" sourceRef="Activity_1nd3v0o" targetRef="Gateway_0u8ah7d" />
-    <bpmn:sequenceFlow id="Flow_14lk3ld" name="KO" sourceRef="Gateway_1thmz4n" targetRef="Event_0gv05tb" />
     <bpmn:sequenceFlow id="Flow_0utqjx0" name="OK" sourceRef="Gateway_1thmz4n" targetRef="Activity_1nd3v0o" />
     <bpmn:sequenceFlow id="Flow_1nkvoto" sourceRef="Activity_0yznxhv" targetRef="Gateway_1thmz4n" />
     <bpmn:sequenceFlow id="Flow_0mn0r29" sourceRef="Activity_09bacf2" targetRef="Activity_0yznxhv" />
@@ -75,13 +71,14 @@
     <bpmn:endEvent id="Event_12hr688">
       <bpmn:incoming>Flow_1ibtevr</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:intermediateThrowEvent id="Event_12ocp9j" name="Position de compte bancaire">
-      <bpmn:outgoing>Flow_0uhe7ke</bpmn:outgoing>
-    </bpmn:intermediateThrowEvent>
     <bpmn:userTask id="Activity_162bhgx" name="Valider le paiement">
       <bpmn:incoming>Flow_1r6v7h2</bpmn:incoming>
-      <bpmn:incoming>Flow_0uhe7ke</bpmn:incoming>
       <bpmn:outgoing>Flow_1ibtevr</bpmn:outgoing>
+      <bpmn:property id="Property_0laizmk" name="__targetRef_placeholder" />
+      <bpmn:dataInputAssociation id="DataInputAssociation_0dboe1s">
+        <bpmn:sourceRef>DataObjectReference_10wy8md</bpmn:sourceRef>
+        <bpmn:targetRef>Property_0laizmk</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
     </bpmn:userTask>
     <bpmn:userTask id="Activity_06tqpbp" name="Enregistrer le paiement de la facture avec les pièces justificatives">
       <bpmn:incoming>Flow_00rv33h</bpmn:incoming>
@@ -105,9 +102,6 @@
       <bpmn:outgoing>Flow_0pv1bt3</bpmn:outgoing>
       <bpmn:outgoing>Flow_03ydar4</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:endEvent id="Event_0gv05tb">
-      <bpmn:incoming>Flow_14lk3ld</bpmn:incoming>
-    </bpmn:endEvent>
     <bpmn:manualTask id="Activity_1kp7sxi" name="Constituer le dossier de demande de paiement et l&#39;envoyer à la banque">
       <bpmn:incoming>Flow_1a8pk36</bpmn:incoming>
       <bpmn:outgoing>Flow_1xvi1j4</bpmn:outgoing>
@@ -116,11 +110,6 @@
       <bpmn:incoming>Flow_0utqjx0</bpmn:incoming>
       <bpmn:outgoing>Flow_126185o</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:exclusiveGateway id="Gateway_1thmz4n">
-      <bpmn:incoming>Flow_1nkvoto</bpmn:incoming>
-      <bpmn:outgoing>Flow_0utqjx0</bpmn:outgoing>
-      <bpmn:outgoing>Flow_14lk3ld</bpmn:outgoing>
-    </bpmn:exclusiveGateway>
     <bpmn:manualTask id="Activity_0yznxhv" name="Vérifier la disponibilité des fonds">
       <bpmn:incoming>Flow_0mn0r29</bpmn:incoming>
       <bpmn:outgoing>Flow_1nkvoto</bpmn:outgoing>
@@ -194,22 +183,40 @@
     <bpmn:sequenceFlow id="Flow_0u2zmpi" sourceRef="Activity_1fmj26a" targetRef="Activity_0s9mjff" />
     <bpmn:userTask id="Activity_1lpl0h7" name="Valider le paiement">
       <bpmn:incoming>Flow_0dl7y83</bpmn:incoming>
-      <bpmn:incoming>Flow_0oumjl2</bpmn:incoming>
       <bpmn:incoming>Flow_1uc3ccs</bpmn:incoming>
       <bpmn:outgoing>Flow_088hr53</bpmn:outgoing>
+      <bpmn:property id="Property_13xdx2q" name="__targetRef_placeholder" />
+      <bpmn:dataInputAssociation id="DataInputAssociation_0ocxg2u">
+        <bpmn:sourceRef>DataObjectReference_0ugtfh1</bpmn:sourceRef>
+        <bpmn:targetRef>Property_13xdx2q</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
     </bpmn:userTask>
     <bpmn:sequenceFlow id="Flow_1uc3ccs" sourceRef="Activity_0s9mjff" targetRef="Activity_1lpl0h7" />
     <bpmn:userTask id="Activity_0s9mjff" name="Enregistrer le SWIFT  les pièces justificatives et le rattacher à la facture">
       <bpmn:incoming>Flow_0u2zmpi</bpmn:incoming>
       <bpmn:outgoing>Flow_1uc3ccs</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:intermediateCatchEvent id="Event_1mqoa98" name="Délai de compensation atteint ou confirmation de paiement du fournisseur">
-      <bpmn:outgoing>Flow_0oumjl2</bpmn:outgoing>
-      <bpmn:messageEventDefinition id="MessageEventDefinition_1k3ik7g" />
-    </bpmn:intermediateCatchEvent>
     <bpmn:endEvent id="Event_15bko96">
       <bpmn:incoming>Flow_088hr53</bpmn:incoming>
     </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_058q77l" name="KO" sourceRef="Gateway_1thmz4n" targetRef="Activity_0xa8l4k" />
+    <bpmn:exclusiveGateway id="Gateway_1thmz4n">
+      <bpmn:incoming>Flow_1nkvoto</bpmn:incoming>
+      <bpmn:outgoing>Flow_0utqjx0</bpmn:outgoing>
+      <bpmn:outgoing>Flow_058q77l</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Activity_0xa8l4k" name="Rejeter paiement">
+      <bpmn:incoming>Flow_058q77l</bpmn:incoming>
+      <bpmn:outgoing>Flow_08is8bf</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="Event_0gv05tb">
+      <bpmn:incoming>Flow_08is8bf</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_08is8bf" sourceRef="Activity_0xa8l4k" targetRef="Event_0gv05tb" />
+    <bpmn:dataObjectReference id="DataObjectReference_0ugtfh1" dataObjectRef="DataObject_1pptm9a" />
+    <bpmn:dataObject id="DataObject_1pptm9a" />
+    <bpmn:dataObjectReference id="DataObjectReference_10wy8md" dataObjectRef="DataObject_0sks54w" />
+    <bpmn:dataObject id="DataObject_0sks54w" />
     <bpmn:association id="Association_0hwpo7y" sourceRef="Activity_162bhgx" targetRef="TextAnnotation_05wms5i" />
     <bpmn:textAnnotation id="TextAnnotation_05wms5i">
       <bpmn:text>Cette validation va générer les écritures en comptabilité dans le journal de banque</bpmn:text>
@@ -236,6 +243,14 @@ Formulaire de demande de paiement (numéro de facture, montant à payer, nom du 
       <bpmn:text>Cette validation doit générer les écritures en comptabilité dans le journal de banque</bpmn:text>
     </bpmn:textAnnotation>
     <bpmn:association id="Association_1t0jnc9" sourceRef="Activity_1lpl0h7" targetRef="TextAnnotation_1hem1gu" />
+    <bpmn:textAnnotation id="TextAnnotation_0e07o8e">
+      <bpmn:text>Délai de compensation atteint ou confirmation de paiement du fournisseur</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0metxqq" sourceRef="DataObjectReference_0ugtfh1" targetRef="TextAnnotation_0e07o8e" />
+    <bpmn:textAnnotation id="TextAnnotation_1xu2uab">
+      <bpmn:text>Position de compte bancaire</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0pkq8bs" sourceRef="DataObjectReference_10wy8md" targetRef="TextAnnotation_1xu2uab" />
   </bpmn:process>
   <bpmn:process id="Process_0pkmq8j" isExecutable="false" />
   <bpmn:process id="Process_16h6rjp" isExecutable="false" />
@@ -246,41 +261,61 @@ Formulaire de demande de paiement (numéro de facture, montant à payer, nom du 
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_0ngtq4y_di" bpmnElement="Lane_0ngtq4y" isHorizontal="true">
-        <dc:Bounds x="190" y="431" width="2050" height="519" />
+        <dc:Bounds x="190" y="440" width="2050" height="510" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_1kedt8y_di" bpmnElement="Lane_1kedt8y" isHorizontal="true">
-        <dc:Bounds x="190" y="260" width="2050" height="171" />
+        <dc:Bounds x="190" y="260" width="2050" height="180" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_0fkubxz_di" bpmnElement="Lane_0fkubxz" isHorizontal="true">
         <dc:Bounds x="190" y="40" width="2050" height="220" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="TextAnnotation_1rr0tqm_di" bpmnElement="TextAnnotation_1rr0tqm" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
-        <dc:Bounds x="690" y="50" width="148" height="70" />
+      <bpmndi:BPMNShape id="TextAnnotation_0e07o8e_di" bpmnElement="TextAnnotation_0e07o8e" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
+        <dc:Bounds x="1610" y="655" width="140" height="70" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="TextAnnotation_1bmj0f1_di" bpmnElement="TextAnnotation_1bmj0f1" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
-        <dc:Bounds x="1020" y="280" width="120" height="70" />
+      <bpmndi:BPMNShape id="TextAnnotation_1xu2uab_di" bpmnElement="TextAnnotation_1xu2uab" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
+        <dc:Bounds x="211" y="889" width="98" height="55" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="TextAnnotation_05wms5i_di" bpmnElement="TextAnnotation_05wms5i" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
-        <dc:Bounds x="380" y="777" width="100" height="98" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="TextAnnotation_0wptxfv_di" bpmnElement="TextAnnotation_0wptxfv" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
-        <dc:Bounds x="550" y="669" width="240" height="80" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="TextAnnotation_082zm1s_di" bpmnElement="TextAnnotation_082zm1s" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
-        <dc:Bounds x="2090" y="610" width="120" height="76" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="TextAnnotation_1hem1gu_di" bpmnElement="TextAnnotation_1hem1gu" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
-        <dc:Bounds x="1360" y="640" width="100" height="98" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1uc3ccs_di" bpmnElement="Flow_1uc3ccs">
+        <di:waypoint x="1950" y="826" />
+        <di:waypoint x="1600" y="826" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0u2zmpi_di" bpmnElement="Flow_0u2zmpi">
+        <di:waypoint x="2000" y="710" />
+        <di:waypoint x="2000" y="780" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1fj9116_di" bpmnElement="Flow_1fj9116">
+        <di:waypoint x="1990" y="570" />
+        <di:waypoint x="1990" y="630" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1sk11j2_di" bpmnElement="Flow_1sk11j2">
+        <di:waypoint x="1900" y="350" />
+        <di:waypoint x="1980" y="350" />
+        <di:waypoint x="1980" y="490" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0itstni_di" bpmnElement="Flow_0itstni">
+        <di:waypoint x="1678" y="550" />
+        <di:waypoint x="1714" y="550" />
+        <di:waypoint x="1714" y="350" />
+        <di:waypoint x="1800" y="350" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_17ww1ty_di" bpmnElement="Flow_17ww1ty">
+        <di:waypoint x="1540" y="550" />
+        <di:waypoint x="1642" y="550" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1h78b14_di" bpmnElement="Flow_1h78b14">
+        <di:waypoint x="1490" y="400" />
+        <di:waypoint x="1490" y="520" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0lv5vim_di" bpmnElement="Flow_0lv5vim">
+        <di:waypoint x="1340" y="540" />
+        <di:waypoint x="1340" y="360" />
+        <di:waypoint x="1440" y="360" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1vxmd4g_di" bpmnElement="Flow_1vxmd4g">
         <di:waypoint x="278" y="139" />
         <di:waypoint x="330" y="139" />
@@ -308,20 +343,17 @@ Formulaire de demande de paiement (numéro de facture, montant à payer, nom du 
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1nkvoto_di" bpmnElement="Flow_1nkvoto">
         <di:waypoint x="670" y="330" />
-        <di:waypoint x="725" y="330" />
+        <di:waypoint x="698" y="330" />
+        <di:waypoint x="698" y="300" />
+        <di:waypoint x="725" y="300" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0utqjx0_di" bpmnElement="Flow_0utqjx0">
-        <di:waypoint x="775" y="330" />
+        <di:waypoint x="775" y="300" />
+        <di:waypoint x="808" y="300" />
+        <di:waypoint x="808" y="330" />
         <di:waypoint x="840" y="330" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="799" y="312" width="17" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_14lk3ld_di" bpmnElement="Flow_14lk3ld">
-        <di:waypoint x="750" y="355" />
-        <di:waypoint x="750" y="382" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="757" y="370" width="17" height="14" />
+          <dc:Bounds x="783" y="282" width="17" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_126185o_di" bpmnElement="Flow_126185o">
@@ -355,10 +387,6 @@ Formulaire de demande de paiement (numéro de facture, montant à payer, nom du 
         <di:waypoint x="940" y="820" />
         <di:waypoint x="1500" y="820" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0oumjl2_di" bpmnElement="Flow_0oumjl2">
-        <di:waypoint x="1550" y="727" />
-        <di:waypoint x="1550" y="786" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_088hr53_di" bpmnElement="Flow_088hr53">
         <di:waypoint x="1550" y="866" />
         <di:waypoint x="1549" y="902" />
@@ -379,10 +407,6 @@ Formulaire de demande de paiement (numéro de facture, montant à payer, nom du 
         <di:waypoint x="300" y="636" />
         <di:waypoint x="300" y="686" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0uhe7ke_di" bpmnElement="Flow_0uhe7ke">
-        <di:waypoint x="300" y="832" />
-        <di:waypoint x="300" y="766" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1ibtevr_di" bpmnElement="Flow_1ibtevr">
         <di:waypoint x="350" y="726" />
         <di:waypoint x="442" y="726" />
@@ -396,50 +420,50 @@ Formulaire de demande de paiement (numéro de facture, montant à payer, nom du 
           <dc:Bounds x="1066" y="523" width="87" height="53" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0lv5vim_di" bpmnElement="Flow_0lv5vim">
-        <di:waypoint x="1340" y="540" />
-        <di:waypoint x="1340" y="360" />
-        <di:waypoint x="1440" y="360" />
+      <bpmndi:BPMNEdge id="Flow_058q77l_di" bpmnElement="Flow_058q77l">
+        <di:waypoint x="750" y="325" />
+        <di:waypoint x="750" y="350" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="757" y="335" width="17" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1h78b14_di" bpmnElement="Flow_1h78b14">
-        <di:waypoint x="1490" y="400" />
-        <di:waypoint x="1490" y="520" />
+      <bpmndi:BPMNEdge id="Flow_08is8bf_di" bpmnElement="Flow_08is8bf">
+        <di:waypoint x="700" y="390" />
+        <di:waypoint x="518" y="390" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_17ww1ty_di" bpmnElement="Flow_17ww1ty">
-        <di:waypoint x="1540" y="550" />
-        <di:waypoint x="1642" y="550" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0itstni_di" bpmnElement="Flow_0itstni">
-        <di:waypoint x="1678" y="550" />
-        <di:waypoint x="1714" y="550" />
-        <di:waypoint x="1714" y="350" />
-        <di:waypoint x="1800" y="350" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1sk11j2_di" bpmnElement="Flow_1sk11j2">
-        <di:waypoint x="1900" y="350" />
-        <di:waypoint x="1980" y="350" />
-        <di:waypoint x="1980" y="490" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1fj9116_di" bpmnElement="Flow_1fj9116">
-        <di:waypoint x="1990" y="570" />
-        <di:waypoint x="1990" y="630" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0u2zmpi_di" bpmnElement="Flow_0u2zmpi">
-        <di:waypoint x="2000" y="710" />
-        <di:waypoint x="2000" y="780" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1uc3ccs_di" bpmnElement="Flow_1uc3ccs">
-        <di:waypoint x="1950" y="826" />
-        <di:waypoint x="1600" y="826" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="Event_0fo8qgw_di" bpmnElement="Event_0fo8qgw" bioc:stroke="#43a047" bioc:fill="#c8e6c9" color:background-color="#c8e6c9" color:border-color="#43a047">
-        <dc:Bounds x="242" y="121" width="36" height="36" />
+      <bpmndi:BPMNShape id="Event_12hr688_di" bpmnElement="Event_12hr688" bioc:stroke="#e53935" bioc:fill="#ffcdd2" color:background-color="#ffcdd2" color:border-color="#e53935">
+        <dc:Bounds x="442" y="708" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1ruk989_di" bpmnElement="Activity_0e3pd2r">
-        <dc:Bounds x="330" y="99" width="100" height="80" />
+      <bpmndi:BPMNShape id="Activity_1c2hx39_di" bpmnElement="Activity_162bhgx">
+        <dc:Bounds x="250" y="686" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0kp7thd_di" bpmnElement="Event_0vsa124">
-        <dc:Bounds x="392" y="211" width="36" height="36" />
+      <bpmndi:BPMNShape id="Activity_1rb1lfo_di" bpmnElement="Activity_06tqpbp">
+        <dc:Bounds x="250" y="556" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0p55yhh_di" bpmnElement="Activity_15cq09g">
+        <dc:Bounds x="400" y="556" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0ar5ykw_di" bpmnElement="Activity_1d1rgvs">
+        <dc:Bounds x="540" y="556" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1in5gfc_di" bpmnElement="Activity_0dmb7gr">
+        <dc:Bounds x="700" y="556" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0u8ah7d_di" bpmnElement="Gateway_0u8ah7d" isMarkerVisible="true">
+        <dc:Bounds x="865" y="456" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0yi5sdk_di" bpmnElement="Activity_1kp7sxi">
+        <dc:Bounds x="840" y="556" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0wjqf7h_di" bpmnElement="Activity_1nd3v0o">
+        <dc:Bounds x="840" y="290" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_11jrse4_di" bpmnElement="Activity_0yznxhv">
+        <dc:Bounds x="570" y="290" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1wt254m_di" bpmnElement="Activity_09bacf2">
+        <dc:Bounds x="570" y="99" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_106spws_di" bpmnElement="Event_0bi4u4k">
         <dc:Bounds x="482" y="121" width="36" height="36" />
@@ -447,51 +471,14 @@ Formulaire de demande de paiement (numéro de facture, montant à payer, nom du 
           <dc:Bounds x="457" y="164" width="87" height="53" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1wt254m_di" bpmnElement="Activity_09bacf2">
-        <dc:Bounds x="570" y="99" width="100" height="80" />
+      <bpmndi:BPMNShape id="Event_0kp7thd_di" bpmnElement="Event_0vsa124">
+        <dc:Bounds x="392" y="211" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_11jrse4_di" bpmnElement="Activity_0yznxhv">
-        <dc:Bounds x="570" y="290" width="100" height="80" />
+      <bpmndi:BPMNShape id="Activity_1ruk989_di" bpmnElement="Activity_0e3pd2r">
+        <dc:Bounds x="330" y="99" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Gateway_1thmz4n_di" bpmnElement="Gateway_1thmz4n" isMarkerVisible="true">
-        <dc:Bounds x="725" y="305" width="50" height="50" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0wjqf7h_di" bpmnElement="Activity_1nd3v0o">
-        <dc:Bounds x="840" y="290" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0yi5sdk_di" bpmnElement="Activity_1kp7sxi">
-        <dc:Bounds x="840" y="556" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0gv05tb_di" bpmnElement="Event_0gv05tb" bioc:stroke="#e53935" bioc:fill="#ffcdd2" color:background-color="#ffcdd2" color:border-color="#e53935">
-        <dc:Bounds x="732" y="382" width="36" height="36" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Gateway_0u8ah7d_di" bpmnElement="Gateway_0u8ah7d" isMarkerVisible="true">
-        <dc:Bounds x="865" y="456" width="50" height="50" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1in5gfc_di" bpmnElement="Activity_0dmb7gr">
-        <dc:Bounds x="700" y="556" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0ar5ykw_di" bpmnElement="Activity_1d1rgvs">
-        <dc:Bounds x="540" y="556" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0p55yhh_di" bpmnElement="Activity_15cq09g">
-        <dc:Bounds x="400" y="556" width="100" height="80" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1rb1lfo_di" bpmnElement="Activity_06tqpbp">
-        <dc:Bounds x="250" y="556" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1c2hx39_di" bpmnElement="Activity_162bhgx">
-        <dc:Bounds x="250" y="686" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_12ocp9j_di" bpmnElement="Event_12ocp9j" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
-        <dc:Bounds x="282" y="832" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="259" y="875" width="82" height="27" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_12hr688_di" bpmnElement="Event_12hr688" bioc:stroke="#e53935" bioc:fill="#ffcdd2" color:background-color="#ffcdd2" color:border-color="#e53935">
-        <dc:Bounds x="442" y="708" width="36" height="36" />
+      <bpmndi:BPMNShape id="Event_0fo8qgw_di" bpmnElement="Event_0fo8qgw" bioc:stroke="#43a047" bioc:fill="#c8e6c9" color:background-color="#c8e6c9" color:border-color="#43a047">
+        <dc:Bounds x="242" y="121" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_15uiw0h_di" bpmnElement="Activity_173p7gb">
         <dc:Bounds x="840" y="669" width="100" height="80" />
@@ -534,26 +521,60 @@ Formulaire de demande de paiement (numéro de facture, montant à payer, nom du 
         <dc:Bounds x="1950" y="780" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0c352ku_di" bpmnElement="Event_1mqoa98" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
-        <dc:Bounds x="1532" y="691" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="1582" y="644" width="76" height="80" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_15bko96_di" bpmnElement="Event_15bko96" bioc:stroke="#e53935" bioc:fill="#ffcdd2" color:background-color="#ffcdd2" color:border-color="#e53935">
         <dc:Bounds x="1532" y="902" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Association_137zl7g_di" bpmnElement="Association_137zl7g">
-        <di:waypoint x="670" y="108" />
-        <di:waypoint x="690" y="96" />
+      <bpmndi:BPMNShape id="TextAnnotation_05wms5i_di" bpmnElement="TextAnnotation_05wms5i" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
+        <dc:Bounds x="380" y="777" width="100" height="98" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1bmj0f1_di" bpmnElement="TextAnnotation_1bmj0f1" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
+        <dc:Bounds x="1020" y="280" width="120" height="70" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1rr0tqm_di" bpmnElement="TextAnnotation_1rr0tqm" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
+        <dc:Bounds x="690" y="50" width="148" height="70" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0wptxfv_di" bpmnElement="TextAnnotation_0wptxfv" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
+        <dc:Bounds x="550" y="669" width="240" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_082zm1s_di" bpmnElement="TextAnnotation_082zm1s" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
+        <dc:Bounds x="2090" y="610" width="120" height="76" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1hem1gu_di" bpmnElement="TextAnnotation_1hem1gu" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
+        <dc:Bounds x="1360" y="640" width="100" height="98" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1thmz4n_di" bpmnElement="Gateway_1thmz4n" isMarkerVisible="true">
+        <dc:Bounds x="725" y="275" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0xa8l4k_di" bpmnElement="Activity_0xa8l4k">
+        <dc:Bounds x="700" y="350" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0gv05tb_di" bpmnElement="Event_0gv05tb" bioc:stroke="#e53935" bioc:fill="#ffcdd2" color:background-color="#ffcdd2" color:border-color="#e53935">
+        <dc:Bounds x="482" y="372" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataObjectReference_0ugtfh1_di" bpmnElement="DataObjectReference_0ugtfh1" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
+        <dc:Bounds x="1532" y="675" width="36" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataObjectReference_10wy8md_di" bpmnElement="DataObjectReference_10wy8md" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
+        <dc:Bounds x="282" y="815" width="36" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_0hwpo7y_di" bpmnElement="Association_0hwpo7y">
+        <di:waypoint x="350" y="751" />
+        <di:waypoint x="400" y="777" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Association_046905a_di" bpmnElement="Association_046905a">
         <di:waypoint x="940" y="320" />
         <di:waypoint x="1020" y="305" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Association_0hwpo7y_di" bpmnElement="Association_0hwpo7y">
-        <di:waypoint x="350" y="751" />
-        <di:waypoint x="400" y="777" />
+      <bpmndi:BPMNEdge id="Association_137zl7g_di" bpmnElement="Association_137zl7g">
+        <di:waypoint x="670" y="108" />
+        <di:waypoint x="690" y="96" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Association_0wpxd4h_di" bpmnElement="Association_0wpxd4h">
         <di:waypoint x="840" y="611" />
@@ -566,6 +587,14 @@ Formulaire de demande de paiement (numéro de facture, montant à payer, nom du 
       <bpmndi:BPMNEdge id="Association_1t0jnc9_di" bpmnElement="Association_1t0jnc9">
         <di:waypoint x="1517" y="786" />
         <di:waypoint x="1460" y="716" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_0metxqq_di" bpmnElement="Association_0metxqq">
+        <di:waypoint x="1568" y="695" />
+        <di:waypoint x="1610" y="684" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_0pkq8bs_di" bpmnElement="Association_0pkq8bs">
+        <di:waypoint x="282" y="864" />
+        <di:waypoint x="262" y="889" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Participant_0l1q11v_di" bpmnElement="Participant_0l1q11v" isHorizontal="true">
         <dc:Bounds x="160" y="970" width="1190" height="140" />
@@ -592,6 +621,14 @@ Formulaire de demande de paiement (numéro de facture, montant à payer, nom du 
         <bpmndi:BPMNLabel>
           <dc:Bounds x="1758" y="677" width="83" height="14" />
         </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataInputAssociation_0ocxg2u_di" bpmnElement="DataInputAssociation_0ocxg2u">
+        <di:waypoint x="1550" y="725" />
+        <di:waypoint x="1550" y="786" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataInputAssociation_0dboe1s_di" bpmnElement="DataInputAssociation_0dboe1s">
+        <di:waypoint x="300" y="815" />
+        <di:waypoint x="300" y="766" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
